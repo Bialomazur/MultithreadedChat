@@ -14,7 +14,7 @@ host = "127.0.0.1"
 port = 8080
 s.connect((host, port))
 
-print("[ + ] Erfolgreich mit dem Server {} verbunden".format(host))
+print("[ + ] Successfully connected to {}".format(host))
 
 
 root = Tk()
