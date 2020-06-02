@@ -16,7 +16,7 @@ host = "127.0.0.1"
 port = 8080
 
 server.bind((host, port))
-print("[ + ] Server wurde gestartet.")
+print("[ + ] Server has been started.")
 
 root = Tk()
 root.title("Admin")
@@ -89,7 +89,7 @@ class Client(threading.Thread):
 
     def kick(self):
 
-        self.conn.send("[ i ] Server: Sie wurden vom Admin gekickt.".encode())
+        self.conn.send("[ i ] Server: The admin has kicked you.".encode())
         self.conn.close()
         Client.clients.remove([self.conn, self.nn])
         connection_threads.remove(self)
@@ -101,15 +101,15 @@ class Client(threading.Thread):
         root.update()
         users.configure(state=DISABLED)
         for client in Client.clients:
-                client[0].sendall(f"[ i ] Server: {self.nn} wurde vom Admin gekickt.".encode())
+                client[0].sendall(f"[ i ] Server: {self.nn} got kicked by the Admin.".encode())
         chat.configure(state=NORMAL)
-        chat.insert(END,f"\n[ i ] Server: {self.nn} wurde vom Admin gekickt.")
+        chat.insert(END,f"\n[ i ] Server: {self.nn} got kicked by the Admin.")
         chat.configure(state=DISABLED)
 
 
             
 
-error_message = Label(root, text="User nicht gefunden!", bg=background, fg="red", font="Arial 12 bold")
+error_message = Label(root, text="User not found!", bg=background, fg="red", font="Arial 12 bold")
 
 def deac_emsg():
     time.sleep(5)
