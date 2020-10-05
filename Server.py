@@ -5,11 +5,9 @@ import random
 from tkinter import *
 
 
-
 background = "black"
 WIDTH = 800
 HEIGHT = 350
-
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = "127.0.0.1"
@@ -66,7 +64,6 @@ class Client(threading.Thread):
         self.index = index
 
         
-
     def run(self):
 
         while True:
@@ -106,9 +103,7 @@ class Client(threading.Thread):
         chat.insert(END,f"\n[ i ] Server: {self.nn} got kicked by the Admin.")
         chat.configure(state=DISABLED)
 
-
-            
-
+        
 error_message = Label(root, text="User not found!", bg=background, fg="red", font="Arial 12 bold")
 
 def deac_emsg():
@@ -163,7 +158,6 @@ def serverloop():
         users.configure(state=DISABLED)
      
      
-        
 serverthread = threading.Thread(target=serverloop)
 serverthread.start()
 
